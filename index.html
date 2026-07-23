@@ -225,6 +225,22 @@
       .scroll-cue{display:none;}
     }
 
+    /* ---------- FIX: temporizador del hero en móviles muy pequeños ---------- */
+    @media (max-width:400px){
+      .hero-mini-timer{ gap:6px; }
+      .hero-mini-timer div{ min-width:38px; padding:4px 6px; border-radius:8px; }
+      .hero-mini-timer span{ font-size:clamp(16px,4.5vw,22px); }
+      .hero-mini-timer small{ font-size:6.5px; letter-spacing:0.5px; }
+      .hero-mini-timer .sep{ font-size:13px; padding:0 1px; }
+    }
+    @media (min-width:401px) and (max-width:480px){
+      .hero-mini-timer{ gap:8px; }
+      .hero-mini-timer div{ min-width:44px; padding:6px 8px; }
+      .hero-mini-timer span{ font-size:clamp(18px,4vw,26px); }
+      .hero-mini-timer small{ font-size:7.5px; }
+      .hero-mini-timer .sep{ font-size:15px; }
+    }
+
     /* floating decorative bubbles (hero) */
     .floaty{position:absolute; z-index:2; animation:floaty 6s ease-in-out infinite;}
     @keyframes floaty{0%,100%{transform:translateY(0) rotate(-3deg);} 50%{transform:translateY(-22px) rotate(3deg);}}
@@ -555,7 +571,7 @@
   </div>
 
   <!-- Botón flotante de WhatsApp (abajo derecha, con tooltip) -->
-  <a href="https://wa.me/595981000000?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20primer%20añito%20de%20Jesús%20Matheo" 
+  <a href="https://wa.me/595983957615?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20primer%20añito%20de%20Jesús%20Matheo" 
      target="_blank" 
      rel="noopener" 
      class="whatsapp-float" 
@@ -644,7 +660,7 @@
     </div>
   </section>
 
-  <!-- CAROUSEL -->
+  <!-- CAROUSEL (imágenes rotas corregidas) -->
   <section id="carousel">
     <div class="eyebrow">Recuerdos</div>
     <h2 class="section-title reveal">Mis fotos</h2>
@@ -652,7 +668,8 @@
       <div class="carousel" style="border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow); background:#dff2f8; position:relative;">
         <div class="carousel-track" id="carTrack" style="display:flex; transition:transform .7s cubic-bezier(.65,0,.35,1);">
           <img src="assets/img/bebe.webp" alt="Foto 1" style="width:100%; height:auto; max-height:480px; object-fit:contain; flex:0 0 100%; display:block;">
-          <img src="assets/img/....webp" alt="Foto 2" style="width:100%; height:auto; max-height:480px; object-fit:contain; flex:0 0 100%; display:block;">
+          <!-- reemplazo la imagen rota por tarjeta.jpg (ya existe) -->
+          <img src="assets/img/tarjeta.jpg" alt="Foto 2" style="width:100%; height:auto; max-height:480px; object-fit:contain; flex:0 0 100%; display:block;">
           <img src="assets/img/tarjeta.jpg" alt="Foto 3" style="width:100%; height:auto; max-height:480px; object-fit:contain; flex:0 0 100%; display:block;">
         </div>
         <button class="carousel-arrow prev" id="carPrev" style="position:absolute; top:50%; transform:translateY(-50%); left:14px; width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,0.85); display:flex; align-items:center; justify-content:center; z-index:5; box-shadow:0 6px 16px rgba(21,54,72,0.2); border:none; cursor:pointer;">
@@ -667,14 +684,15 @@
     </div>
   </section>
 
-  <!-- GALLERY -->
+  <!-- GALLERY (imagen rota corregida) -->
   <section id="gallery">
     <div class="eyebrow">Galería</div>
     <h2 class="section-title reveal">Galería</h2>
     <div class="grid reveal" id="galleryGrid">
       <figure data-full="assets/decor-1.jpg"><img src="assets/img/bebe.webp" alt="Decoración marina"></figure>
       <figure data-full="assets/tarjeta.jpg"><img src="assets/img/tarjeta.jpg" alt="Mesa de dulces"></figure>
-      <figure data-full="assets/decor-2.jpg"><img src="assets/img/....webp" alt="Detalle medusa"></figure>
+      <!-- reemplazo la imagen rota por bebe.webp (ya existe) -->
+      <figure data-full="assets/img/bebe.webp"><img src="assets/img/bebe.webp" alt="Jesús Matheo"></figure>
     </div>
   </section>
 
@@ -941,3 +959,5 @@
   </script>
 </body>
 </html>
+
+
